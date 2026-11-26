@@ -1,0 +1,18 @@
+{
+  "name": "link-shortener",
+  "version": "1.0.0",
+  "description": "Small URL shortener used as a DevOps practice project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}
