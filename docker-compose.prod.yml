@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: links
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U app -d links']
+      interval: 5s
+      timeout: 3s
+      retries: 10
+  api:
+    image: ${ECR_REGISTRY}/link-shortener:latest
+    restart: unless-stopped
+    ports:
+      - '80:3000'
+    environment:
+      DATABASE_URL: postgres://app:${DB_PASSWORD}@db:5432/links
+      PORT: 3000
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  pgdata:
