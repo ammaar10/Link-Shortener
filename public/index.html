@@ -1,24 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Link Shortener</title>
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
-    h1 { margin-bottom: 1.5rem; }
-    form { display: flex; gap: .5rem; }
-    input { flex: 1; padding: .6rem; font-size: 1rem; border: 1px solid #bbb; border-radius: 6px; }
-    button { padding: .6rem 1rem; font-size: 1rem; border: 0; border-radius: 6px; background: #2563eb; color: #fff; cursor: pointer; }
-    #msg { margin: 1rem 0; min-height: 1.5rem; }
-    .err { color: #b91c1c; }
-    ul { list-style: none; padding: 0; }
-    li { padding: .6rem 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; gap: 1rem; }
-    .url { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #555; max-width: 55%; }
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 640px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      color: #1a1a1a;
+    }
+
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    form {
+      display: flex;
+      gap: .5rem;
+    }
+
+    input {
+      flex: 1;
+      padding: .6rem;
+      font-size: 1rem;
+      border: 1px solid #bbb;
+      border-radius: 6px;
+    }
+
+    button {
+      padding: .6rem 1rem;
+      font-size: 1rem;
+      border: 0;
+      border-radius: 6px;
+      background: #2563eb;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    #msg {
+      margin: 1rem 0;
+      min-height: 1.5rem;
+    }
+
+    .err {
+      color: #b91c1c;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      padding: .6rem 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .url {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #555;
+      max-width: 55%;
+    }
   </style>
 </head>
+
 <body>
-  <h1>Link Shortener</h1>
+  <h1>Link Shortener v2</h1>
   <form id="form">
     <input id="url" type="url" placeholder="https://example.com/a-very-long-link" required>
     <button type="submit">Shorten</button>
@@ -73,4 +129,5 @@
     loadLinks();
   </script>
 </body>
+
 </html>
